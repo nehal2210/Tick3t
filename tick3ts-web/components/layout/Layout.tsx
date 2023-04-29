@@ -11,48 +11,48 @@ interface LayoutProps {
 
 export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
   return (
-    <>
+      <>
       <Head customMeta={customMeta} />
       <header>
         <Container maxWidth="container.xl">
           <SimpleGrid
-            columns={[1, 1, 1, 2]}
-            alignItems="center"
-            justifyContent="space-between"
-            py="8"
+          columns={[1, 1, 1, 2]}
+          alignItems="center"
+          justifyContent="space-between"
+          py="8"
           >
-            <Flex py={[4, null, null, 0]}>
-              <NextLink href="/" passHref legacyBehavior>
-                <Link px="4" py="1">
-                  Home
-                </Link>
-              </NextLink>
-              <NextLink href="/create-event" passHref legacyBehavior>
-                <Link px="4" py="1">
-                  Create event
-                </Link>
-              </NextLink>
-              <NextLink href="/my-tickets" passHref legacyBehavior>
-                <Link px="4" py="1">
-                  My tickets
-                </Link>
-              </NextLink>
-            </Flex>
-            <Flex
-              order={[-1, null, null, 2]}
-              alignItems={'center'}
-              justifyContent={['flex-start', null, null, 'flex-end']}
-            >
-              <ConnectButton />
-            </Flex>
-          </SimpleGrid>
-        </Container>
-      </header>
-      <main>
-        <Container centerContent={true} maxWidth="container.xl">
-          {children}
-        </Container>
-      </main>
+          <Flex py={[4, null, null, 0]}>
+            <NextLink href="/" passHref legacyBehavior>
+              <Link px="4" py="1">
+                Home
+              </Link>
+            </NextLink>
+            <NextLink href="/create-event" passHref legacyBehavior>
+              <Link px="4" py="1">
+                Create event
+              </Link>
+            </NextLink>
+            <NextLink href="/my-tickets" passHref legacyBehavior>
+              <Link px="4" py="1">
+                My tickets
+              </Link>
+            </NextLink>
+          </Flex>
+          <Flex
+          order={[-1, null, null, 2]}
+          alignItems={'center'}
+          justifyContent={['flex-start', null, null, 'flex-end']}
+          >
+          <ConnectButton />
+        </Flex>
+      </SimpleGrid>
+    </Container>
+    </header>
+    <main>
+      <Container centerContent={true} maxWidth="container.xl">
+        {children}
+      </Container>
+    </main>
     </>
-  )
-}
+    )
+  }

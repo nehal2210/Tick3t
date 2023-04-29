@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { Button, ChakraProvider } from '@chakra-ui/react'
 import {
   connectorsForWallets,
   darkTheme,
@@ -19,6 +19,10 @@ import {
 } from 'wagmi/chains'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+import styles from  './Home.module.css'
+// import * from '../styles/globals.css'
+import './globals.css'
 
 const ALCHEMY_API_KEY = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY || ''
 const { chains, provider, webSocketProvider } = configureChains(
@@ -47,6 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { address, isConnected } = useAccount()
   return (
     <WagmiConfig client={wagmiClient}>
+      {/* <WalletMultiButton/> */}
       <RainbowKitProvider
         appInfo={demoAppInfo}
         chains={chains}
@@ -58,6 +63,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </ChakraProvider>
       </RainbowKitProvider>
+      
     </WagmiConfig>
   )
 }
