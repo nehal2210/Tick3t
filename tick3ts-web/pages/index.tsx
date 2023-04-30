@@ -57,20 +57,7 @@ const Events = () => {
           <EventCard key={item} address={item} />
           ))}
         </SimpleGrid>
-        <div className={styles.App}>
-          <Head>
-            <title>Wallet-Adapter Example</title>
-            <meta
-            name="description"
-            content="Wallet-Adapter Example"
-            />
-          </Head>
-          <AppBar />
-          <div className={styles.AppBody}>
-            <p>Display Balance Here</p>
-            <SendSolForm />
-          </div>
-        </div>
+
       </Layout>
   )
 }

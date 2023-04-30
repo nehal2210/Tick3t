@@ -3,6 +3,9 @@ import { ConnectButton } from '@rainbow-me/rainbowkit'
 import NextLink from 'next/link'
 import React from 'react'
 import { Head, MetaProps } from './Head'
+import PhantomButton from '../phantomButton'
+import App2 from '../ConnectPhantomWalletButton'
+import ConnectPhantomWalletButton from '../ConnectPhantomWalletButton'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -43,7 +46,7 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           alignItems={'center'}
           justifyContent={['flex-start', null, null, 'flex-end']}
           >
-          <ConnectButton />
+          <ConnectPhantomWalletButton/>
         </Flex>
       </SimpleGrid>
     </Container>
